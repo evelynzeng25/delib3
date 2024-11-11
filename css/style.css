@@ -1,4 +1,6 @@
 
+
+
 :root {
     /* Light mode variables */
     --background-color: #ffffff; /* Light mode background */
@@ -322,11 +324,7 @@ body.dark-mode span.athlete {
 
 
 
-.athlete-name {
-    cursor: pointer; /* Show pointer cursor on hover */
-    color: #0073e6; /* Change color to indicate it's clickable */
-    text-decoration: underline; /* Underline for emphasis */
-}
+
 
 .athlete-name:hover {
     color: #7700b3; /* Darker color on hover */
@@ -347,9 +345,12 @@ body.dark-mode .athlete-name:hover{
 .athlete figcaption {
     font-size: 1.2em;
     font-weight: bold;
-    color: #333;
     margin-top: 5px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    color: #0073e6; /* Change color to indicate it's clickable */
+    text-decoration: underline; /* Underline for emphasis */
 }
+
 
 
 dl {
@@ -410,16 +411,6 @@ body.dark-mode dd{
     border-top: 1px solid #ddd; /* Top border */
 }
 
-/* Prefers-reduced-motion styles */
-@media (prefers-reduced-motion: reduce) {
-    .sticky-header {
-        animation: none; /* Disable animations for the sticky header */
-    }
-
-    .athlete {
-        transition: none; /* Disable transitions for athlete cards */
-    }
-}
 
 @media (prefers-color-scheme: dark){
     body {
@@ -523,14 +514,40 @@ body.dark-mode dd{
         background-color: black;
     }
 
-    
+    span.athlete {
+        font-weight: bold; /* Make the names bold */
+        color: white; /* Set a blue color for light mode */
+        padding: 0;
+        box-shadow:none;
+        background-color: transparent;
+    }
 
     
 }
+#gallery {
+    padding: 5px;
+   
+}
+
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows images to wrap onto the next line */
-    gap: 10px; /* Space between images */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-gap: 10px;
+    max-width: 100%; /* Ensure it fits within the screen */
+    margin: 0 auto;
+}
+
+.gallery-container a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -544,6 +561,172 @@ body.dark-mode dd{
 
 .gallery-image:hover {
     transform: scale(1.05); /* Optional: scale up on hover */
+}
+.results {
+    display: none;
+}
+
+.lb-data .lb-number {
+    color: white;
+}
+
+.lb-data {
+    color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sticky-header {
+        animation: none; /* Disable animations for the sticky header */
+    }
+
+    .athlete {
+        transition: none; /* Disable transitions for athlete cards */
+    }
+
+
+    .gallery-container a {
+        transition: none;
+        animation: none; 
+    }
+
+    .gallery-image {
+        transition: none;
+        animation: none; 
+        
+    }
+   
+    body.lb-disable-scrolling {
+        transition: none;
+        animation: none;
+      }
+      
+      .lightboxOverlay {
+        transition: none;
+        animation: none;
+      }
+      
+      .lightbox {
+        transition: none;
+        animation: none;
+      }
+      
+      .lightbox .lb-image {
+        transition: none;
+        animation: none;
+        /* Image border */
+        border: 4px solid white;
+      }
+      
+      .lightbox a img {
+        border: none;
+      }
+      
+      .lb-outerContainer {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-outerContainer:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .lb-loader {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-cancel {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-nav {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-container > .nav {
+        left: 0;
+      }
+      
+      .lb-nav a {
+        outline: none;
+        background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+      }
+      
+      .lb-prev, .lb-next {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-nav a.lb-prev {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-nav a.lb-prev:hover {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-nav a.lb-next {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-nav a.lb-next:hover {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-dataContainer {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-dataContainer:after {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-data {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-data .lb-details {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-data .lb-caption {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1em;
+      }
+      
+      .lb-data .lb-caption a {
+        color: #4ae;
+      }
+      
+      .lb-data .lb-number {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-data .lb-close {
+        transition: none;
+        animation: none;
+      }
+      
+      .lb-data .lb-close:hover {
+        transition: none;
+        animation: none;
+
+      }
+   
 }
 
 
