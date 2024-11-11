@@ -531,10 +531,23 @@ body.dark-mode dd{
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(2, 1fr); /* Default to 2 columns for mobile */
     grid-gap: 10px;
-    max-width: 100%; /* Ensure it fits within the screen */
+    width: 100%; /* Take up full width */
     margin: 0 auto;
+}
+
+/* Adapt grid layout for larger screens */
+@media (min-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr); /* Switch to 4 columns on larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(6, 1fr); /* Example: 6 columns for very large screens */
+    }
 }
 
 .gallery-container a {
